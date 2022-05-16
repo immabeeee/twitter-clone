@@ -1,0 +1,17 @@
+<a
+  class="wrapper"
+  routerLink="{{ link }}"
+  routerLinkActive="active-link"
+  [routerLinkActiveOptions]="{ exact: true }"
+  [ngClass]="{ 
+    primary: isPrimary,
+    secondary: isSecondary
+  }"
+>
+  <div class="icon-container">
+    <i class="{{ iconName }}"></i>
+  </div>
+  <div class="text-container">
+    {{ text }}
+  </div>
+</a>

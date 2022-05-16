@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800&display=swap');
+@import url('https://css.gg/hashtag.css');
+@import url('https://css.gg/home-alt.css');
+@import url('https://css.gg/bell.css');
+@import url('https://css.gg/more-o.css');
+@import url('https://css.gg/user.css');
+@import url('https://css.gg/box.css');
+@import url('https://css.gg/list.css');
+@import url('https://css.gg/pentagon-up.css');
+@import url('https://css.gg/more-alt.css');
+@import url('https://css.gg/add-r.css');
+
+:root {
+  --font-family: 'Barlow', sans-serif;
+
+  --white: #fff;
+  --gray-100: #ffffd9;
+  --gray-200: #f7f9f9;
+  --gray-300: #eff3f4;
+  --gray-400: #cfd9de;
+  --blue-100: #d5eeff;
+  --blue-200: #1d98f0;
+  --blue-300: #1e90e2;
+  --black: #000;
+
+  --font-800: 800;
+  --font-700: 700;
+  --font-400: 400;
+
+  --font-xxl: 26px;
+  --font-xl: 20px;
+  --font-l: 17px;
+  --font-m: 15px;
+  --font-s: 14px;
+  --font-xs: 14px;
+  --font-xxs: 11px;
+}

@@ -64,6 +64,81 @@
         }
       }
     },
+    "shared-assets": {
+      "projectType": "library",
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/assets"],
+          "options": {
+            "jestConfig": "libs/shared/assets/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/assets/src/**/*.ts",
+              "libs/shared/assets/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared-theme": {
+      "projectType": "library",
+      "root": "libs/shared/theme",
+      "sourceRoot": "libs/shared/theme/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/theme"],
+          "options": {
+            "jestConfig": "libs/shared/theme/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/theme/src/**/*.ts",
+              "libs/shared/theme/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared-variables": {
+      "projectType": "library",
+      "root": "libs/shared/variables",
+      "sourceRoot": "libs/shared/variables/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/variables"],
+          "options": {
+            "jestConfig": "libs/shared/variables/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/variables/src/**/*.ts",
+              "libs/shared/variables/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "twitter-clone-web": {
       "projectType": "application",
       "root": "apps/twitter-clone-web",
@@ -82,9 +157,17 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "apps/twitter-clone-web/src/favicon.ico",
-              "apps/twitter-clone-web/src/assets"
+              "apps/twitter-clone-web/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./libs/shared/assets/src/lib",
+                "output": "./assets"
+              }
             ],
-            "styles": ["apps/twitter-clone-web/src/styles.scss"],
+            "styles": [
+              "apps/twitter-clone-web/src/styles.scss",
+              "./libs/shared/theme/src/lib/theme-twitter.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -182,6 +265,87 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/twitter-clone-web-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ui-button": {
+      "projectType": "library",
+      "root": "libs/ui-button",
+      "sourceRoot": "libs/ui-button/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-button"],
+          "options": {
+            "jestConfig": "libs/ui-button/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-button/src/**/*.ts",
+              "libs/ui-button/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "ui-sidebar-link": {
+      "projectType": "library",
+      "root": "libs/ui-sidebar-link",
+      "sourceRoot": "libs/ui-sidebar-link/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-sidebar-link"],
+          "options": {
+            "jestConfig": "libs/ui-sidebar-link/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-sidebar-link/src/**/*.ts",
+              "libs/ui-sidebar-link/src/**/*.html"
+            ]
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/ui-sidebar-link/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/ui-sidebar-link",
+            "config": {
+              "configFolder": "libs/ui-sidebar-link/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
           }
         }
       }
