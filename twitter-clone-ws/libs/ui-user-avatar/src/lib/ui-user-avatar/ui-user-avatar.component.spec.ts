@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TweetListComponent } from './tweet-list.component';
+import { UiUserAvatarComponent } from './ui-user-avatar.component';
 
-describe('TweetListComponent', () => {
-  let component: TweetListComponent;
-  let fixture: ComponentFixture<TweetListComponent>;
+describe('UiUserAvatarComponent', () => {
+  let component: UiUserAvatarComponent;
+  let fixture: ComponentFixture<UiUserAvatarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TweetListComponent ]
+      declarations: [ UiUserAvatarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TweetListComponent);
+    fixture = TestBed.createComponent(UiUserAvatarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

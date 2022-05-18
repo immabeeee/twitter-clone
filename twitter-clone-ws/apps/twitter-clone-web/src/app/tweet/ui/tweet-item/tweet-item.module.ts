@@ -1,14 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SidebarUserComponent } from './sidebar-user.component';
+import { TweetItemComponent } from './tweet-item.component';
 import { UiUserAvatarModule } from '@twitter-clone-ws/ui-user-avatar';
 
 @NgModule({
-    declarations: [SidebarUserComponent],
+    declarations: [
+        TweetItemComponent
+    ],
     imports: [
         CommonModule,
         UiUserAvatarModule
     ],
-    exports: [SidebarUserComponent],
+    exports: [TweetItemComponent],
 })
-export class SidebarUserModule { }
+export class TweetItemModule { }

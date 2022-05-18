@@ -4,15 +4,16 @@
   padding-right: 20vw;
   height: 100vh;
   gap: 10px;
+  overflow: hidden;
 
   .sidebar-wrapper {
+    display: fixed;
   }
 
   .main-wrapper {
     border-left: 1px solid #efefef;
     display: flex;
     justify-content: flex-start;
-    padding-left: 30px;
     gap: 50px;
   }
 

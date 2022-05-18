@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TweetListComponent } from './tweet-list.component';
+import { TweetListPage } from './tweet-list.page';
 
 const routes: Routes = [
     {
         path: '',
-        component: TweetListComponent
+        component: TweetListPage
     }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule],
 })
-export class TweetListRoutingModule { }
+export class TweetListPageRoutingModule { }

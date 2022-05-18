@@ -39,6 +39,9 @@
     "api-interfaces": {
       "tags": []
     },
+    "directives-auto-resize-textarea": {
+      "tags": []
+    },
     "shared-assets": {
       "tags": []
     },
@@ -59,6 +62,9 @@
       "tags": []
     },
     "ui-sidebar-link": {
+      "tags": []
+    },
+    "ui-user-avatar": {
       "tags": []
     }
   }

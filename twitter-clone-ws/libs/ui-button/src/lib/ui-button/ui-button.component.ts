@@ -9,6 +9,8 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 export class UiButtonComponent implements OnInit {
   @Input() text!: string;
   @Input() isPrimary: boolean = true;
+  @Input() isSmall: boolean = false;
+  @Input() isDisabled: boolean = false;
 
   constructor() { }
 

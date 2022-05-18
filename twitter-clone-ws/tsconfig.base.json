@@ -16,13 +16,19 @@
     "baseUrl": ".",
     "paths": {
       "@twitter-clone-ws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@twitter-clone-ws/directives/auto-resize-textarea": [
+        "libs/directives/auto-resize-textarea/src/index.ts"
+      ],
       "@twitter-clone-ws/shared/assets": ["libs/shared/assets/src/index.ts"],
       "@twitter-clone-ws/shared/theme": ["libs/shared/theme/src/index.ts"],
       "@twitter-clone-ws/shared/variables": [
         "libs/shared/variables/src/index.ts"
       ],
       "@twitter-clone-ws/ui-button": ["libs/ui-button/src/index.ts"],
-      "@twitter-clone-ws/ui-sidebar-link": ["libs/ui-sidebar-link/src/index.ts"]
+      "@twitter-clone-ws/ui-sidebar-link": [
+        "libs/ui-sidebar-link/src/index.ts"
+      ],
+      "@twitter-clone-ws/ui-user-avatar": ["libs/ui-user-avatar/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

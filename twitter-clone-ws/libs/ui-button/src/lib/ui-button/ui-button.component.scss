@@ -1,20 +1,35 @@
 .wrapper {
   width: 100%;
-  border-radius: 50px;
+  
   outline: none;
   border: none;
   cursor: pointer;
 
-  &.primary {
+  &.small {
+    padding: 10px 15px;
+    font-size: var(--font-l);
+    border-radius: 20px;
+  }
+
+  &.large {
     padding: 15px 25px;
+    font-size: var(--font-xl);
+    border-radius: 50px;
+  }
+
+  &.primary {
     background-color: var(--blue-200);
     font-weight: var(--font-700);
-    font-size: var(--font-xl);
     color: var(--white);
 
     &:hover {
       background-color: var(--blue-300);
       transition: 0.2s;
     }
+  }
+
+  &.disabled {
+    opacity: 0.6;
+    cursor: default;
   }
 }

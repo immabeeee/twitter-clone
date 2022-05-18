@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { TweetListRoutingModule } from './tweet-list-routing.module';
+import { TweetItemModule } from '../tweet-item/tweet-item.module';
 import { TweetListComponent } from './tweet-list.component';
 
 @NgModule({
@@ -9,8 +9,8 @@ import { TweetListComponent } from './tweet-list.component';
     ],
     imports: [
         CommonModule,
-        TweetListRoutingModule
+        TweetItemModule
     ],
-    exports: [],
+    exports: [TweetListComponent],
 })
 export class TweetListModule { }

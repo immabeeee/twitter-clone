@@ -7,5 +7,7 @@ module.exports = {
     '<rootDir>/libs/shared/theme',
     '<rootDir>/libs/ui-sidebar-link',
     '<rootDir>/libs/ui-button',
+    '<rootDir>/libs/ui-user-avatar',
+    '<rootDir>/libs/directives/auto-resize-textarea',
   ],
 };

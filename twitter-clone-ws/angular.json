@@ -64,6 +64,31 @@
         }
       }
     },
+    "directives-auto-resize-textarea": {
+      "projectType": "library",
+      "root": "libs/directives/auto-resize-textarea",
+      "sourceRoot": "libs/directives/auto-resize-textarea/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/directives/auto-resize-textarea"],
+          "options": {
+            "jestConfig": "libs/directives/auto-resize-textarea/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/directives/auto-resize-textarea/src/**/*.ts",
+              "libs/directives/auto-resize-textarea/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "shared-assets": {
       "projectType": "library",
       "root": "libs/shared/assets",
@@ -346,6 +371,31 @@
             "ci": {
               "quiet": true
             }
+          }
+        }
+      }
+    },
+    "ui-user-avatar": {
+      "projectType": "library",
+      "root": "libs/ui-user-avatar",
+      "sourceRoot": "libs/ui-user-avatar/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-user-avatar"],
+          "options": {
+            "jestConfig": "libs/ui-user-avatar/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-user-avatar/src/**/*.ts",
+              "libs/ui-user-avatar/src/**/*.html"
+            ]
           }
         }
       }
