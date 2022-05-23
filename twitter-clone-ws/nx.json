@@ -42,6 +42,9 @@
     "directives-auto-resize-textarea": {
       "tags": []
     },
+    "pipe-time-ago": {
+      "tags": []
+    },
     "shared-assets": {
       "tags": []
     },
@@ -62,6 +65,9 @@
       "tags": []
     },
     "ui-sidebar-link": {
+      "tags": []
+    },
+    "ui-spinner": {
       "tags": []
     },
     "ui-user-avatar": {

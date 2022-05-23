@@ -9,5 +9,7 @@ module.exports = {
     '<rootDir>/libs/ui-button',
     '<rootDir>/libs/ui-user-avatar',
     '<rootDir>/libs/directives/auto-resize-textarea',
+    '<rootDir>/libs/ui-spinner',
+    '<rootDir>/libs/pipe/time-ago',
   ],
 };

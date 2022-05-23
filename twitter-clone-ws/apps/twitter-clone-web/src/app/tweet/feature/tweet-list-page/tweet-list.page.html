@@ -11,6 +11,21 @@
     <twitter-clone-ws-tweet-create></twitter-clone-ws-tweet-create>
   </div>
   <div class="tweet-list-wrapper">
-    <twitter-clone-ws-tweet-list></twitter-clone-ws-tweet-list>
+    <ng-container *ngIf="(tweetsView$ | async) as view">
+      <div
+        class="infinite-scroll"
+        infiniteScroll
+        [infiniteScrollDistance]="infiniteScrollDistance"
+        [infiniteScrollThrottle]="infiniteScrollThrottle"
+        (scrolled)="loadMoreTweets(view.isLoading, view.query)"
+        [scrollWindow]="scrollWindow"
+      >
+        <twitter-clone-ws-tweet-list
+          [isLoading]="view.isLoading"
+          [errorMessage]="view.errorMessage"
+          [tweets]="view.tweets"
+        ></twitter-clone-ws-tweet-list>
+      </div>
+    </ng-container>
   </div>
 </div>

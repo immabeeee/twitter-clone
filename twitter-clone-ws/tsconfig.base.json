@@ -19,6 +19,7 @@
       "@twitter-clone-ws/directives/auto-resize-textarea": [
         "libs/directives/auto-resize-textarea/src/index.ts"
       ],
+      "@twitter-clone-ws/pipe/time-ago": ["libs/pipe/time-ago/src/index.ts"],
       "@twitter-clone-ws/shared/assets": ["libs/shared/assets/src/index.ts"],
       "@twitter-clone-ws/shared/theme": ["libs/shared/theme/src/index.ts"],
       "@twitter-clone-ws/shared/variables": [
@@ -28,6 +29,7 @@
       "@twitter-clone-ws/ui-sidebar-link": [
         "libs/ui-sidebar-link/src/index.ts"
       ],
+      "@twitter-clone-ws/ui-spinner": ["libs/ui-spinner/src/index.ts"],
       "@twitter-clone-ws/ui-user-avatar": ["libs/ui-user-avatar/src/index.ts"]
     }
   },

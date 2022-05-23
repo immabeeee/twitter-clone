@@ -89,6 +89,31 @@
         }
       }
     },
+    "pipe-time-ago": {
+      "projectType": "library",
+      "root": "libs/pipe/time-ago",
+      "sourceRoot": "libs/pipe/time-ago/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/pipe/time-ago"],
+          "options": {
+            "jestConfig": "libs/pipe/time-ago/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/pipe/time-ago/src/**/*.ts",
+              "libs/pipe/time-ago/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "shared-assets": {
       "projectType": "library",
       "root": "libs/shared/assets",
@@ -365,6 +390,62 @@
             "outputPath": "dist/storybook/ui-sidebar-link",
             "config": {
               "configFolder": "libs/ui-sidebar-link/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "ui-spinner": {
+      "projectType": "library",
+      "root": "libs/ui-spinner",
+      "sourceRoot": "libs/ui-spinner/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-spinner"],
+          "options": {
+            "jestConfig": "libs/ui-spinner/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-spinner/src/**/*.ts",
+              "libs/ui-spinner/src/**/*.html"
+            ]
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/ui-spinner/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/ui-spinner",
+            "config": {
+              "configFolder": "libs/ui-spinner/.storybook"
             }
           },
           "configurations": {

@@ -7,8 +7,12 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UiUserAvatarComponent {
-  @Input() url: string = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Q0ue06sLTd7p0SbG_JKOEieaPj9xD8Thpg&usqp=CAU';
+  @Input() url: string = 'https://picsum.photos/200/300';
   @Input() alt: string = `user's avatar`;
+
+  get urlWithCacheCode(): string {
+    return `${this.url}?random=${Math.floor(Math.random() * 10000) + 1}`
+  }
 
   constructor() { }
 

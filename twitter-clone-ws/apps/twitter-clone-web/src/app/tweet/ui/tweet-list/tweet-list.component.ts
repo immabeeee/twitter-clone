@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { TweetPost } from '@twitter-clone-ws/api-interfaces';
 
 @Component({
     selector: 'twitter-clone-ws-tweet-list',
@@ -7,6 +8,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TweetListComponent implements OnInit {
+    @Input() tweets!: TweetPost[];
+    @Input() isLoading!: boolean;
+    @Input() errorMessage!: string | null;
 
     constructor() {
     }

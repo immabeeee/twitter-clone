@@ -5,6 +5,8 @@ import { TweetListPage } from './tweet-list.page';
 import { UiButtonModule } from '@twitter-clone-ws/ui-button'
 import { TweetListModule } from '../../ui/tweet-list/tweet-list.module';
 import { TweetCreateModule } from '../tweet-create/tweet-create.module';
+import { TweetsService } from '../../data-access/service/tweets.service';
+import { InfiniteScrollModule } from "ngx-infinite-scroll";
 
 @NgModule({
     declarations: [
@@ -15,8 +17,10 @@ import { TweetCreateModule } from '../tweet-create/tweet-create.module';
         TweetListPageRoutingModule,
         UiButtonModule,
         TweetListModule,
-        TweetCreateModule
+        TweetCreateModule,
+        InfiniteScrollModule
     ],
     exports: [],
+    providers: [TweetsService]
 })
 export class TweetListPageModule { }
