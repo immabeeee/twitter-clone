@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <ng-container *ngFor="let tweet of tweets">
+    <div class="tweet-item-wrapper">
+      <twitter-clone-ws-tweet-item
+        [tweet]="tweet"
+      ></twitter-clone-ws-tweet-item>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="isLoading">
+    <ng-container *ngTemplateOutlet="loadingTemplate"></ng-container>
+  </ng-container>
+</div>
+
+<ng-template #loadingTemplate>
+  <twitter-clone-ws-ui-spinner></twitter-clone-ws-ui-spinner>
+</ng-template>

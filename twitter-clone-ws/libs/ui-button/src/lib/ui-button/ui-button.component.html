@@ -1,3 +1,13 @@
-<button class="wrapper" [ngClass]="{ primary: isPrimary }">
+<button
+  class="wrapper"
+  [ngClass]="{
+    primary: isPrimary,
+    secondary: isSecondary,
+    small: isSmall,
+    large: !isSmall,
+    disabled: isDisabled
+  }"
+  [disabled]="isDisabled"
+>
   {{ text }}
 </button>

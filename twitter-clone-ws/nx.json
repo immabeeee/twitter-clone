@@ -33,10 +33,22 @@
     ]
   },
   "projects": {
+    "add-class-if-not-visible": {
+      "tags": []
+    },
+    "animations-thums-in-out": {
+      "tags": []
+    },
     "api": {
       "tags": []
     },
     "api-interfaces": {
+      "tags": []
+    },
+    "directives-auto-resize-textarea": {
+      "tags": []
+    },
+    "pipe-time-ago": {
       "tags": []
     },
     "shared-assets": {
@@ -59,6 +71,15 @@
       "tags": []
     },
     "ui-sidebar-link": {
+      "tags": []
+    },
+    "ui-spinner": {
+      "tags": []
+    },
+    "ui-user-avatar": {
+      "tags": []
+    },
+    "utils-form": {
       "tags": []
     }
   }

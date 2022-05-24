@@ -5,8 +5,8 @@ const routes: Routes = [
     {
         path: "",
         loadChildren: () =>
-            import("../tweet-list/tweet-list.module").then(
-                (module) => module.TweetListModule
+            import("../tweet-list-page/tweet-list.page.module").then(
+                (module) => module.TweetListPageModule
             ),
     },
 ];

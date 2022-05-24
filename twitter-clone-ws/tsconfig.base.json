@@ -15,14 +15,29 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@twitter-clone-ws/animations/thums-in-out": [
+        "libs/animations/thums-in-out/src/index.ts"
+      ],
       "@twitter-clone-ws/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@twitter-clone-ws/directives/add-class-if-not-visible": [
+        "libs/directives/add-class-if-not-visible/src/index.ts"
+      ],
+      "@twitter-clone-ws/directives/auto-resize-textarea": [
+        "libs/directives/auto-resize-textarea/src/index.ts"
+      ],
+      "@twitter-clone-ws/pipe/time-ago": ["libs/pipe/time-ago/src/index.ts"],
       "@twitter-clone-ws/shared/assets": ["libs/shared/assets/src/index.ts"],
       "@twitter-clone-ws/shared/theme": ["libs/shared/theme/src/index.ts"],
       "@twitter-clone-ws/shared/variables": [
         "libs/shared/variables/src/index.ts"
       ],
       "@twitter-clone-ws/ui-button": ["libs/ui-button/src/index.ts"],
-      "@twitter-clone-ws/ui-sidebar-link": ["libs/ui-sidebar-link/src/index.ts"]
+      "@twitter-clone-ws/ui-sidebar-link": [
+        "libs/ui-sidebar-link/src/index.ts"
+      ],
+      "@twitter-clone-ws/ui-spinner": ["libs/ui-spinner/src/index.ts"],
+      "@twitter-clone-ws/ui-user-avatar": ["libs/ui-user-avatar/src/index.ts"],
+      "@twitter-clone-ws/utils/form": ["libs/utils/form/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

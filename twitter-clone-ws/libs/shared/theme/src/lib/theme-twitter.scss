@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;800&display=swap');
 @import url('https://css.gg/hashtag.css');
 @import url('https://css.gg/home-alt.css');
 @import url('https://css.gg/bell.css');
@@ -9,6 +9,20 @@
 @import url('https://css.gg/pentagon-up.css');
 @import url('https://css.gg/more-alt.css');
 @import url('https://css.gg/add-r.css');
+@import url('https://css.gg/arrows-exchange.css');
+@import url('https://css.gg/image.css');
+@import url('https://css.gg/album.css');
+@import url('https://css.gg/align-left.css');
+@import url('https://css.gg/smile.css');
+@import url('https://css.gg/calendar.css');
+@import url('https://css.gg/pin.css');
+@import url('https://css.gg/comment.css');
+@import url('https://css.gg/share.css');
+@import url('https://css.gg/export.css');
+@import url('https://css.gg/heart.css');
+@import url('https://css.gg/sync.css');
+@import url('https://css.gg/more.css');
+@import url('https://css.gg/close.css');
 
 :root {
   --font-family: 'Barlow', sans-serif;
@@ -21,10 +35,12 @@
   --blue-100: #d5eeff;
   --blue-200: #1d98f0;
   --blue-300: #1e90e2;
+  --red-100: #e21e1e;
   --black: #000;
 
   --font-800: 800;
   --font-700: 700;
+  --font-500: 500;
   --font-400: 400;
 
   --font-xxl: 26px;

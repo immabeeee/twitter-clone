@@ -1,6 +1,56 @@
 {
   "version": 1,
   "projects": {
+    "add-class-if-not-visible": {
+      "projectType": "library",
+      "root": "libs/directives/add-class-if-not-visible",
+      "sourceRoot": "libs/directives/add-class-if-not-visible/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/directives/add-class-if-not-visible"],
+          "options": {
+            "jestConfig": "libs/directives/add-class-if-not-visible/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/directives/add-class-if-not-visible/src/**/*.ts",
+              "libs/directives/add-class-if-not-visible/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "animations-thums-in-out": {
+      "projectType": "library",
+      "root": "libs/animations/thums-in-out",
+      "sourceRoot": "libs/animations/thums-in-out/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/animations/thums-in-out"],
+          "options": {
+            "jestConfig": "libs/animations/thums-in-out/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/animations/thums-in-out/src/**/*.ts",
+              "libs/animations/thums-in-out/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "api": {
       "root": "apps/api",
       "sourceRoot": "apps/api/src",
@@ -60,6 +110,56 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+          }
+        }
+      }
+    },
+    "directives-auto-resize-textarea": {
+      "projectType": "library",
+      "root": "libs/directives/auto-resize-textarea",
+      "sourceRoot": "libs/directives/auto-resize-textarea/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/directives/auto-resize-textarea"],
+          "options": {
+            "jestConfig": "libs/directives/auto-resize-textarea/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/directives/auto-resize-textarea/src/**/*.ts",
+              "libs/directives/auto-resize-textarea/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "pipe-time-ago": {
+      "projectType": "library",
+      "root": "libs/pipe/time-ago",
+      "sourceRoot": "libs/pipe/time-ago/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/pipe/time-ago"],
+          "options": {
+            "jestConfig": "libs/pipe/time-ago/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/pipe/time-ago/src/**/*.ts",
+              "libs/pipe/time-ago/src/**/*.html"
+            ]
           }
         }
       }
@@ -346,6 +446,112 @@
             "ci": {
               "quiet": true
             }
+          }
+        }
+      }
+    },
+    "ui-spinner": {
+      "projectType": "library",
+      "root": "libs/ui-spinner",
+      "sourceRoot": "libs/ui-spinner/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-spinner"],
+          "options": {
+            "jestConfig": "libs/ui-spinner/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-spinner/src/**/*.ts",
+              "libs/ui-spinner/src/**/*.html"
+            ]
+          }
+        },
+        "storybook": {
+          "builder": "@nrwl/storybook:storybook",
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "port": 4400,
+            "config": {
+              "configFolder": "libs/ui-spinner/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        },
+        "build-storybook": {
+          "builder": "@nrwl/storybook:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "uiFramework": "@storybook/angular",
+            "outputPath": "dist/storybook/ui-spinner",
+            "config": {
+              "configFolder": "libs/ui-spinner/.storybook"
+            }
+          },
+          "configurations": {
+            "ci": {
+              "quiet": true
+            }
+          }
+        }
+      }
+    },
+    "ui-user-avatar": {
+      "projectType": "library",
+      "root": "libs/ui-user-avatar",
+      "sourceRoot": "libs/ui-user-avatar/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-user-avatar"],
+          "options": {
+            "jestConfig": "libs/ui-user-avatar/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-user-avatar/src/**/*.ts",
+              "libs/ui-user-avatar/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "utils-form": {
+      "projectType": "library",
+      "root": "libs/utils/form",
+      "sourceRoot": "libs/utils/form/src",
+      "prefix": "twitter-clone-ws",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils/form"],
+          "options": {
+            "jestConfig": "libs/utils/form/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/utils/form/src/**/*.ts",
+              "libs/utils/form/src/**/*.html"
+            ]
           }
         }
       }

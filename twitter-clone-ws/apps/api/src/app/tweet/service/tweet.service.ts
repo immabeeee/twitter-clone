@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { from, Observable } from 'rxjs';
+import { TweetPost, TweetsResp } from '@twitter-clone-ws/api-interfaces';
+import { from, map, Observable } from 'rxjs';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
-import { TweetPost } from '../models/post.interface';
 import { TweetPostEntity } from '../models/post.entity';
 
 @Injectable()
@@ -18,6 +18,20 @@ export class TweetService {
 
     findAllTweets(): Observable<TweetPost[]> {
         return from(this.tweetPostRepository.find());
+    }
+
+    find(take: number = 20, skip: number = 0): Observable<TweetsResp> {
+        return from(
+            this.tweetPostRepository
+                .findAndCount({ take, skip })
+                .then(([posts]) => <TweetPost[]>posts))
+            .pipe(map((tweets: TweetPost[]) => {
+                return {
+                    take,
+                    skip,
+                    tweets
+                }
+            }))
     }
 
     updatePost(id: number, tweetPost: TweetPost): Observable<UpdateResult> {
