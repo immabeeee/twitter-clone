@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TweetListPage } from './tweet-list.page';
+import { TweetListPageComponent } from './tweet-list.page';
 
 const routes: Routes = [
     {
         path: '',
-        component: TweetListPage
+        component: TweetListPageComponent
     }
 ];
 

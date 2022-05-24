@@ -33,6 +33,12 @@
     ]
   },
   "projects": {
+    "add-class-if-not-visible": {
+      "tags": []
+    },
+    "animations-thums-in-out": {
+      "tags": []
+    },
     "api": {
       "tags": []
     },
@@ -71,6 +77,9 @@
       "tags": []
     },
     "ui-user-avatar": {
+      "tags": []
+    },
+    "utils-form": {
       "tags": []
     }
   }

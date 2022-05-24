@@ -1,31 +1,34 @@
 <div class="wrapper">
   <div class="header-wrapper">
-    <h1>Głowna</h1>
+    <h1>Home</h1>
     <div class="menu-button">
       <div class="icon-container">
         <i class="gg-arrows-exchange"></i>
       </div>
     </div>
   </div>
-  <div class="create-tweet-wrapper">
-    <twitter-clone-ws-tweet-create></twitter-clone-ws-tweet-create>
-  </div>
-  <div class="tweet-list-wrapper">
-    <ng-container *ngIf="(tweetsView$ | async) as view">
-      <div
-        class="infinite-scroll"
-        infiniteScroll
-        [infiniteScrollDistance]="infiniteScrollDistance"
-        [infiniteScrollThrottle]="infiniteScrollThrottle"
-        (scrolled)="loadMoreTweets(view.isLoading, view.query)"
-        [scrollWindow]="scrollWindow"
-      >
-        <twitter-clone-ws-tweet-list
-          [isLoading]="view.isLoading"
-          [errorMessage]="view.errorMessage"
-          [tweets]="view.tweets"
-        ></twitter-clone-ws-tweet-list>
-      </div>
-    </ng-container>
+  <div class="content-wrapper">
+    <div class="create-tweet-wrapper">
+      <twitter-clone-ws-tweet-create></twitter-clone-ws-tweet-create>
+    </div>
+    <div class="tweet-list-wrapper">
+      <ng-container *ngIf="(tweetsView$ | async) as view">
+        <div
+          class="infinite-scroll"
+          infiniteScroll
+          [infiniteScrollDistance]="infiniteScrollDistance"
+          [infiniteScrollThrottle]="infiniteScrollThrottle"
+          [infiniteScrollContainer]="scrollContainerSelector"
+          [fromRoot]="fromRoot"
+          (scrolled)="loadMoreTweets(view.isLoading, view.query)"
+        >
+          <twitter-clone-ws-tweet-list
+            [isLoading]="view.isLoading"
+            [errorMessage]="view.errorMessage"
+            [tweets]="view.tweets"
+          ></twitter-clone-ws-tweet-list>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>

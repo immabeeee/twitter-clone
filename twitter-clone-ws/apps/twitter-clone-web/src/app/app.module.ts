@@ -8,6 +8,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { AddClassIfNotVisibleModule } from '@twitter-clone-ws/directives/add-class-if-not-visible'
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     SidebarModule,
+    AddClassIfNotVisibleModule,
     StoreModule.forRoot(
       {},
       {
@@ -31,4 +33,4 @@ import { environment } from '../environments/environment';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

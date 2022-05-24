@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TweetListPage } from './tweet-list.page';
+import { TweetListPageComponent } from './tweet-list.page';
 
-describe('TweetListPage', () => {
-  let component: TweetListPage;
-  let fixture: ComponentFixture<TweetListPage>;
+describe('TweetListPageComponent', () => {
+  let component: TweetListPageComponent;
+  let fixture: ComponentFixture<TweetListPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TweetListPage ]
+      declarations: [ TweetListPageComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TweetListPage);
+    fixture = TestBed.createComponent(TweetListPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

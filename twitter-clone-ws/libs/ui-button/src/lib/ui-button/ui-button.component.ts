@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'twitter-clone-ws-ui-button',
@@ -6,15 +6,10 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
   styleUrls: ['./ui-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class UiButtonComponent implements OnInit {
+export class UiButtonComponent {
   @Input() text!: string;
-  @Input() isPrimary: boolean = true;
-  @Input() isSmall: boolean = false;
-  @Input() isDisabled: boolean = false;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  @Input() isPrimary = true;
+  @Input() isSmall = false;
+  @Input() isDisabled = false;
+  @Input() isSecondary = false;
 }

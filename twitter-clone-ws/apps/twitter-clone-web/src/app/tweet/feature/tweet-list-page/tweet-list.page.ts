@@ -9,10 +9,11 @@ import { generateDefaultTweetsQuery, TweetsQuery } from '../../data-access/model
   templateUrl: './tweet-list.page.html',
   styleUrls: ['./tweet-list.page.scss']
 })
-export class TweetListPage implements OnInit {
+export class TweetListPageComponent implements OnInit {
   public readonly infiniteScrollDistance: number = 1;
   public readonly infiniteScrollThrottle: number = 50;
-  public readonly scrollWindow: boolean = false;
+  public readonly scrollContainerSelector: string = '.main-wrapper';
+  public readonly fromRoot: boolean = true;
   public tweetsView$: Observable<TweetsStateView> = this.tweetsService.getTweetsStateView$();
 
   constructor(private tweetsService: TweetsService) { }
