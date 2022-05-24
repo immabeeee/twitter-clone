@@ -1,0 +1,37 @@
+<div class="wrapper">
+    <h1>Sign In 🙃</h1>
+    <form [formGroup]="form">
+        <fieldset class="fieldset">
+            <div class="fieldset-item" [ngClass]="{
+                'error': form?.get('email')?.errors && form?.get('email')?.touched
+              }">
+                <label for="email">Email</label>
+                <input type="email" formControlName="email" name="email">
+                <div class="fieldset-item-error"
+                    *ngIf="form?.get('email')?.errors && form?.get('email')?.touched">
+                    <ng-container *ngIf="form?.get('email')?.errors?.required">
+                        Please provide a valid email address.
+                    </ng-container>
+                </div>
+            </div>
+            <div class="fieldset-item" [ngClass]="{
+                'error': form?.get('password')?.errors && form?.get('password')?.touched
+              }">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" name="password">
+                <div class="fieldset-item-error"
+                    *ngIf="form?.get('password')?.errors && form?.get('password')?.touched">
+                    <ng-container *ngIf="form?.get('password')?.errors?.required">
+                        Please provide a password.
+                    </ng-container>
+                </div>
+            </div>
+            <div class="fieldset-item">
+                <div class="buttons-container">
+                    <twitter-clone-ws-ui-button type="submit" (click)="onSubmit()" [text]="'Next'">
+                    </twitter-clone-ws-ui-button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
