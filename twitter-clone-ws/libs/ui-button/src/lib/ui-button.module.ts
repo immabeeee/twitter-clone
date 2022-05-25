@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UiButtonComponent } from './ui-button/ui-button.component';
+import { UiSpinnerModule } from '@twitter-clone-ws/ui-spinner';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [
-    UiButtonComponent
-  ],
+  declarations: [UiButtonComponent],
+  imports: [CommonModule, UiSpinnerModule],
   exports: [UiButtonComponent]
 })
-export class UiButtonModule { }
+export class UiButtonModule {}

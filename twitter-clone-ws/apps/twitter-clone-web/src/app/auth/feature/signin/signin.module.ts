@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SignInFormService } from '../../data-access/form/signin-form.service';
+import { SignInFormService } from '../../data-access/form/sign-in-form.service';
 import { UiButtonModule } from '@twitter-clone-ws/ui-button'
 import { SignInComponent } from './signin.component';
 

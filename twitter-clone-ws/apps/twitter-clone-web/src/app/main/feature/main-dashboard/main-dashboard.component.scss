@@ -1,0 +1,55 @@
+.app-wrapper {
+  display: grid;
+  grid-template-columns: minmax(80px, 30vw) 1fr;
+  height: 100vh;
+  gap: 10px;
+  overflow: hidden;
+
+  .sidebar-wrapper {
+    display: fixed;
+  }
+
+  .main-wrapper {
+    position: relative;
+    border-left: 1px solid #efefef;
+    display: flex;
+    justify-content: flex-start;
+    grid-gap: 50px;
+    gap: 50px;
+    height: 100vh;
+    overflow: auto;
+  }
+
+  .router-wrapper {
+    min-width: 35vw;
+  }
+
+  .trending-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 300px 150px;
+    gap: 15px;
+
+    div {
+      min-width: 300px;
+      background-color: var(--gray-200);
+      padding: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: minmax(80px, 15vw) max-content;
+    padding-right: 5vw;
+
+    .trending-wrapper {
+      display: none !important;
+    }
+
+    .router-wrapper {
+      min-width: 60vw;
+    }
+  }
+}

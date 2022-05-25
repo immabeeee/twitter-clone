@@ -9,6 +9,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { AddClassIfNotVisibleModule } from '@twitter-clone-ws/directives/add-class-if-not-visible'
+import { AuthGuard } from './auth/guard/auth.guard';
+import { AuthService } from './auth/data-access/auth.service';
+import { AuthRestService } from './auth/data-access/auth.rest.service';
+import { HttpClientModule } from '@angular/common/http';
+import { JwtService } from './auth/data-access/jwt.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +22,7 @@ import { AddClassIfNotVisibleModule } from '@twitter-clone-ws/directives/add-cla
     AppRoutingModule,
     SidebarModule,
     AddClassIfNotVisibleModule,
+    HttpClientModule,
     StoreModule.forRoot(
       {},
       {
@@ -30,7 +36,7 @@ import { AddClassIfNotVisibleModule } from '@twitter-clone-ws/directives/add-cla
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
-  providers: [],
+  providers: [AuthGuard, AuthService, AuthRestService, JwtService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

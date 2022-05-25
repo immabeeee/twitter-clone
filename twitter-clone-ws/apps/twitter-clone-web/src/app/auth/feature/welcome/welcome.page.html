@@ -45,7 +45,7 @@
 
 <twitter-clone-ws-modal *ngIf="isSignUpModalVisible" (closeModal)="toggleSignUpModal()">
     <div modal>
-        <twitter-clone-ws-sign-up></twitter-clone-ws-sign-up>
+        <twitter-clone-ws-sign-up (openSignIn)="handleOpenSignInAfterSignUp()"></twitter-clone-ws-sign-up>
     </div>
 </twitter-clone-ws-modal>
 

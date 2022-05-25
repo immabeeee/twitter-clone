@@ -7,6 +7,7 @@ import { AuthService } from './service/auth.service';
 import { JwtModule } from '@nestjs/jwt';
 import { JwtStrategy } from './guard/jwt.strategy';
 import { JwtGuard } from './guard/jwt.guard';
+import { RolesGuard } from './guard/roles.guard';
 
 @Module({
   imports: [
@@ -19,7 +20,7 @@ import { JwtGuard } from './guard/jwt.guard';
     TypeOrmModule.forFeature([UserEntity]),
     LoggerModule
   ],
-  providers: [AuthService, JwtStrategy, JwtGuard],
+  providers: [AuthService, JwtStrategy, JwtGuard, RolesGuard],
   controllers: [AuthController]
 })
 export class AuthModule {}

@@ -10,10 +10,12 @@ import {
   Request,
   UseGuards
 } from '@nestjs/common';
-import { TweetPost, TweetsResp } from '@twitter-clone-ws/api-interfaces';
+import { Role, TweetPost, TweetsResp } from '@twitter-clone-ws/api-interfaces';
 import { Observable } from 'rxjs';
 import { DeleteResult, UpdateResult } from 'typeorm';
+import { Roles } from '../../auth/decorator/roles.decorator';
 import { JwtGuard } from '../../auth/guard/jwt.guard';
+import { RolesGuard } from '../../auth/guard/roles.guard';
 import { TweetService } from '../service/tweet.service';
 import { LoggerService } from './../../shared/logger/service/logger.service';
 
@@ -26,7 +28,8 @@ export class TweetController {
     private loggerService: LoggerService
   ) {}
 
-  @UseGuards(JwtGuard)
+  @Roles(Role.ADMIN)
+  @UseGuards(JwtGuard, RolesGuard)
   @Post()
   create(@Body() post: TweetPost, @Request() req): Observable<TweetPost> {
     this.loggerService.log(

@@ -51,7 +51,7 @@
             </div>
             <div class="fieldset-item">
                 <div class="buttons-container">
-                    <twitter-clone-ws-ui-button type="submit" [text]="'Next'">
+                    <twitter-clone-ws-ui-button (click)="onSubmit()" type="submit" [text]="'Next'" [isLoading]="isRegisterLoading">
                     </twitter-clone-ws-ui-button>
                 </div>
             </div>

@@ -7,8 +7,7 @@
               }">
                 <label for="email">Email</label>
                 <input type="email" formControlName="email" name="email">
-                <div class="fieldset-item-error"
-                    *ngIf="form?.get('email')?.errors && form?.get('email')?.touched">
+                <div class="fieldset-item-error" *ngIf="form?.get('email')?.errors && form?.get('email')?.touched">
                     <ng-container *ngIf="form?.get('email')?.errors?.required">
                         Please provide a valid email address.
                     </ng-container>
@@ -28,7 +27,8 @@
             </div>
             <div class="fieldset-item">
                 <div class="buttons-container">
-                    <twitter-clone-ws-ui-button type="submit" (click)="onSubmit()" [text]="'Next'">
+                    <twitter-clone-ws-ui-button type="submit" (click)="onSubmit()" [text]="'Next'"
+                        [isLoading]="isSignInLoading">
                     </twitter-clone-ws-ui-button>
                 </div>
             </div>

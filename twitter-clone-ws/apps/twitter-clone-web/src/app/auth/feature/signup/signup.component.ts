@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { SignUpFormService } from '../../data-access/form/signup-form.service';
+import { take } from 'rxjs';
+import { AuthService } from '../../data-access/auth.service';
+import { SignUpFormService } from '../../data-access/form/sign-up-form.service';
 
 @Component({
   selector: 'twitter-clone-ws-sign-up',
@@ -8,9 +10,15 @@ import { SignUpFormService } from '../../data-access/form/signup-form.service';
   styleUrls: ['./signup.component.scss']
 })
 export class SignUpComponent {
-  public form: FormGroup;
+  @Output() openSignIn: EventEmitter<void> = new EventEmitter<void>();
 
-  constructor(private signUpFormService: SignUpFormService) {
+  public form: FormGroup;
+  public isRegisterLoading = false;
+
+  constructor(
+    private signUpFormService: SignUpFormService,
+    private authService: AuthService
+  ) {
     this.form = this.signUpFormService.createEmptySignUpForm();
   }
 
@@ -20,5 +28,15 @@ export class SignUpComponent {
     if (!this.form.valid) {
       return;
     }
+
+    this.isRegisterLoading = true;
+
+    this.authService
+      .signUp(this.form.getRawValue())
+      .pipe(take(1))
+      .subscribe(() => {
+        this.isRegisterLoading = false;
+        this.openSignIn.emit();
+      });
   }
 }

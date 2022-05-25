@@ -12,7 +12,13 @@ export class WelcomePageComponent {
   public toggleSignUpModal(): void {
     this.isSignUpModalVisible = !this.isSignUpModalVisible;
   }
+
   public toggleSignInModal(): void {
     this.isSignInModalVisible = !this.isSignInModalVisible;
+  }
+
+  public handleOpenSignInAfterSignUp(): void {
+    this.isSignUpModalVisible = false;
+    this.isSignInModalVisible = true;
   }
 }

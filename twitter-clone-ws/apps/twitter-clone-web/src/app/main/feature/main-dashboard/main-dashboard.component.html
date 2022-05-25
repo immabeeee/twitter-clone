@@ -1,0 +1,17 @@
+<div class="app-wrapper">
+    <section class="sidebar-wrapper">
+        <twitter-clone-ws-sidebar></twitter-clone-ws-sidebar>
+    </section>
+    <section class="main-wrapper" [addClassIfNotVisible]="'fixed'" [childSelector]="'header-wrapper'">
+        <div class="router-wrapper">
+            <router-outlet></router-outlet>
+            <div class="full-height"></div>
+        </div>
+        <div class="trending-wrapper">
+            <div class="search-bar-wrapper"></div>
+            <div class="trending-phrases-wrapper"></div>
+            <div class="popular-accounts-wrapper"></div>
+            <div class="footer"></div>
+        </div>
+    </section>
+</div>
