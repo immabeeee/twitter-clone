@@ -16,6 +16,7 @@ import { DeleteResult, UpdateResult } from 'typeorm';
 import { Roles } from '../../auth/decorator/roles.decorator';
 import { JwtGuard } from '../../auth/guard/jwt.guard';
 import { RolesGuard } from '../../auth/guard/roles.guard';
+import { AuthorGuard } from '../guard/author.guard';
 import { TweetService } from '../service/tweet.service';
 import { LoggerService } from './../../shared/logger/service/logger.service';
 
@@ -28,7 +29,7 @@ export class TweetController {
     private loggerService: LoggerService
   ) {}
 
-  @Roles(Role.ADMIN)
+  @Roles(Role.ADMIN, Role.PREMIUM, Role.USER)
   @UseGuards(JwtGuard, RolesGuard)
   @Post()
   create(@Body() post: TweetPost, @Request() req): Observable<TweetPost> {
@@ -49,6 +50,8 @@ export class TweetController {
     return this.tweetService.find(take, skip);
   }
 
+  @Roles(Role.ADMIN, Role.PREMIUM)
+  @UseGuards(JwtGuard, RolesGuard, AuthorGuard)
   @Put(':id')
   update(
     @Param() id: number,
@@ -59,6 +62,7 @@ export class TweetController {
         post
       )}`
     );
+    
     return this.tweetService.updatePost(id, post);
   }
 

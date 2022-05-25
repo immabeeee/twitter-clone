@@ -70,14 +70,13 @@ export class AuthService {
 
   public isUnexpiredTokenInStorage(): Observable<boolean> {
     return of(this.jwtService.getDecodedToken()).pipe(
-      map((user: WebUserUi) => {
-        const isTokenExpired: boolean = new Date() > new Date(user.exp * 1000);
-        if (isTokenExpired) {
+      map((user: WebUserUi | null) => {
+        if (!user || this.isTokenExpired(user.exp)) {
           return false;
-        } else {
-          this.user$.next(user);
-          return true;
         }
+
+        this.user$.next(user);
+        return true;
       })
     );
   }
@@ -90,8 +89,12 @@ export class AuthService {
 
   public handleSignInUser(token: string): void {
     this.jwtService.saveToken(token);
-    const decodedToken: WebUserUi = this.jwtService.getDecodedToken();
+    const decodedToken: WebUserUi | null = this.jwtService.getDecodedToken();
     this.user$.next(decodedToken);
     this.router.navigateByUrl('/tweets');
+  }
+
+  private isTokenExpired(exp: number): boolean {
+    return new Date() > new Date(exp * 1000);
   }
 }
