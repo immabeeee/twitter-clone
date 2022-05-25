@@ -12,4 +12,5 @@ export class UiButtonComponent {
   @Input() isSmall = false;
   @Input() isDisabled = false;
   @Input() isSecondary = false;
+  @Input() isLoading = false;
 }

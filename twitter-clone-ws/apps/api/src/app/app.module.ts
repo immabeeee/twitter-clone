@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AuthModule } from './auth/auth.module';
 import { TweetModule } from './tweet/tweet.module';
 
 const apiModules = [
-  TweetModule
+  TweetModule,
+  AuthModule
 ]
 
 @Module({

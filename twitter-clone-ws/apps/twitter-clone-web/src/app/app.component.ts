@@ -10,8 +10,7 @@ import { filter, map, tap } from 'rxjs';
 export class AppComponent {
   public isAuthRoute$ = this.router.events.pipe(
     filter((e): e is NavigationEnd => e instanceof NavigationEnd),
-    map((e: NavigationEnd) => e.url === this.authRouteUrl),
-    tap((e) => console.log(e))
+    map((e: NavigationEnd) => e.url === this.authRouteUrl)
   );
 
   private readonly authRouteUrl = '/auth';

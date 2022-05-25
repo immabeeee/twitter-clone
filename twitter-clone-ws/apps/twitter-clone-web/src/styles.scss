@@ -6,3 +6,31 @@
   font-family: var(--font-family);
   outline-color: var(--blue-200);
 }
+
+
+.fieldset {
+  .fieldset-item {
+    input {
+      width: 100%;
+      height: 50px;
+      padding-left: 10px;
+      font-size: var(--font-l);
+      border: 1px solid var(--gray-400);
+    }
+
+    &.error {
+      label {
+        color: var(--red-100);
+      }
+
+      input {
+        color: var(--red-100);
+        border: 1px solid var(--red-100);
+      }
+
+      .fieldset-item-error {
+        color: var(--red-100);
+      }
+    }
+  }
+}

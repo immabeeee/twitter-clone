@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LoggerModule } from '../shared/logger/logger.module';
 import { TweetController } from './controller/tweet.controller';
-import { TweetPostEntity } from './models/post.entity';
+import { TweetPostEntity } from './model/post.entity';
 import { TweetService } from './service/tweet.service';
 
 @Module({
