@@ -4,6 +4,11 @@ import { AuthGuard } from './auth/guard/auth.guard';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'tweets',
+    pathMatch: 'full'
+  },
+  {
     path: 'tweets',
     canLoad: [AuthGuard],
     loadChildren: () =>
@@ -20,8 +25,8 @@ const routes: Routes = [
       )
   },
   {
-    path: '',
-    redirectTo: 'tweets',
+    path: '**',
+    redirectTo: '',
     pathMatch: 'full'
   }
 ];

@@ -38,10 +38,18 @@ export class TweetService {
   }
 
   updatePost(id: number, tweetPost: TweetPost): Observable<UpdateResult> {
+    console.log("id: ", id);
+    console.log("tweetPost: ", tweetPost);
     return from(this.tweetPostRepository.update(id, tweetPost));
   }
 
   deletePost(id: number): Observable<DeleteResult> {
     return from(this.tweetPostRepository.delete(id));
+  }
+
+  findPostById(id: number): Observable<TweetPost> {
+    return from(
+      this.tweetPostRepository.findOne({ id }, { relations: ['author'] })
+    );
   }
 }

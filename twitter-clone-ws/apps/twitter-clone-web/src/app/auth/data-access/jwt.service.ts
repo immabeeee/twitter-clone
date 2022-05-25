@@ -18,8 +18,13 @@ export class JwtService {
     return localStorage.getItem(this.TOKEN_KEY) as string;
   }
 
-  getDecodedToken(): WebUserUi {
+  getDecodedToken(): WebUserUi | null {
     const token = this.getToken();
+
+    if (!token) {
+      return null;
+    }
+
     return jwt_decode(token);
   }
 }

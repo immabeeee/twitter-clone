@@ -13,7 +13,7 @@ export class TweetPostEntity {
   id: number;
 
   @Column({ default: '' })
-  message: string;
+  body: string;
 
   @CreateDateColumn()
   createdAt: Date;
